@@ -1,0 +1,187 @@
+
+let str1 = "hrower"
+let str2 = "float"
+let str3 = "flong"
+let output_ = ""
+
+if (str1[0] == str2[0] && str1[0] == str3[0] && str2[0] == str3[0]) {
+    output_ = output_ + str1[0]
+    }
+    else output_ = output_
+if (output_ == str1[0] && str1[1] == str2[1] && str1[1] == str3[1] && str2[1] == str3[1]) {
+    output_ = output_ + str1[1]
+    }
+    else output = output
+if (output_ == str1[0] + str1[1] && str1[2] == str2[2] && str1[2] == str3[2] && str2[2] == str3[2]) {
+    output_ = output_ + str1[2]
+    }
+    else output_ = output_
+if (output == str1[0] + str1[1] + str1[2] && str1[3] == str2[3] && str1[3] == str3[3] && str2[3] == str3[3]) {
+    output_ = output_ + str1[3]
+    }
+    else output = output
+console.log(output_)
+
+
+
+
+let  num = "CCXCV"
+let output = 0
+
+//charcter1
+if (num[0] =="C") {
+    output = output + 100
+    }
+    else if(num[0] == "L") {
+        output = output + 50
+    }
+    else if(num[0] == "X") {
+        output = output + 10
+    }
+    else if(num[0] == "V") {
+        output = output + 5
+    }
+    else if(num[0] == "I") {
+        output = output + 1
+    }
+
+
+//character2
+if (num[1] == "C" && num[0] != "X") {
+    output = output + 100
+    }
+    else if (num[1] == "C" && num[0] == "X") {
+        output = output + 80
+    }
+    else if (num[1] == "L" && num[0] != "X") {
+        output = output + 50
+    }
+    else if (num[1] == "L" && num[0] == "X") {
+        output = output + 30
+    }
+    else if (num[1] == "X" && num[0] != "I") {
+        output = output + 10
+    }
+    else if (num[1] == "X" && num[0] == "I") {
+        output = output + 8
+    }
+    else if (num[1] == "V" && num[0] != "I") {
+        output = output + 5
+    }
+    else if (num[1] == "V" && num[0] == "I") {
+        output = output + 3
+    }
+    else if (num[1] == "I") {
+        output = output + 1
+    }
+
+
+//character3
+if (num[2] == "C" && num[1] != "X") {
+    output = output + 100
+    }
+    else if (num[2] == "C" && num[1] == "X") {
+        output = output + 80
+    }
+    else if (num[2] == "L" && num[1] != "X") {
+        output = output + 50
+    }
+    else if (num[2] == "L" && num[1] == "X") {
+        output = output + 30
+    }
+    else if (num[2] == "X" && num[1] != "I") {
+        output = output + 10
+    }
+    else if (num[2] == "X" && num[1] == "I") {
+        output = output + 8
+    }
+    else if (num[2] == "V" && num[1] != "I") {
+        output = output + 5
+    }
+    else if (num[2] == "V" && num[1] == "I") {
+        output = output + 3
+    }
+    else if (num[2] == "I") {
+        output = output + 1
+    }
+
+
+//character4
+if (num[3] == "C" && num[2] != "X") {
+    output = output + 100
+    }
+    else if (num[3] == "C" && num[2] == "X") {
+        output = output + 80
+    }
+    else if (num[3] == "L" && num[2] != "X") {
+        output = output + 50
+    }
+    else if (num[3] == "L" && num[2] == "X") {
+        output = output + 30
+    }
+    else if (num[3] == "X" && num[2] != "I") {
+        output = output + 10
+    }
+    else if (num[3] == "X" && num[2] == "I") {
+        output = output + 8
+    }
+    else if (num[3] == "V" && num[2] != "I") {
+        output = output + 5
+    }
+    else if (num[3] == "V" && num[2] == "I") {
+        output = output + 3
+    }
+    else if (num[3] == "I") {
+        output = output + 1
+    }
+
+
+//character5
+if (num[4] == "C" && num[3] != "X") {
+    output = output + 100
+    }
+    else if (num[4] == "C" && num[3] == "X") {
+        output = output + 80
+    }
+    else if (num[4] == "L" && num[3] != "X") {
+        output = output + 50
+    }
+    else if (num[4] == "L" && num[3] == "X") {
+        output = output + 30
+    }
+    else if (num[4] == "X" && num[3] != "I") {
+        output = output + 10
+    }
+    else if (num[4] == "X" && num[3] == "I") {
+        output = output + 8
+    }
+    else if (num[4] == "V" && num[3] != "I") {
+        output = output + 5
+    }
+    else if (num[4] == "V" && num[3] == "I") {
+        output = output + 3
+    }
+    else if (num[4] == "I") {
+        output = output + 1
+    }
+
+console.log(output)
+
+// 5. Write a JavaScript program that capitalizes the first letter of each word of a given string.
+
+// Example
+// For "the quick brown fox"; Print "The Quick Brown Fox"
+// For "java script"; Print "Java Script"
+
+let sCase= "frank is tough buddy"
+let firstOcc = sCase.indexOf(" ")
+let subStr1 = sCase[0].toUpperCase() + sCase.slice(1, firstOcc)
+let secondOcc = sCase.indexOf(" ", firstOcc + 1)
+let thirdOcc = sCase.indexOf(" ", secondOcc + 1)
+let subStr2 = sCase.charAt(firstOcc + 1).toUpperCase() + sCase.slice(firstOcc + 2, secondOcc )
+let subStr3 = sCase.charAt(secondOcc + 1).toUpperCase() + sCase.slice(secondOcc + 2, thirdOcc)
+let subStr4 = sCase.charAt(thirdOcc + 1).toUpperCase() + sCase.slice(thirdOcc + 2)
+
+
+let uCase = subStr1 + " " + subStr2  + " " + subStr3 + " " + subStr4
+console.log(uCase)
