@@ -1,0 +1,110 @@
+// THE CONST KEYWORD AND FUNCTION EXPRESSION
+// let name = "abbey";
+
+// name = "alaroye"
+
+
+// console.log(name)
+
+
+// const SURNAME = "olatunji"
+
+//area = pi * r * r
+// let radius = 5
+// const PI = 3.142
+
+// surname = "oladele"
+
+
+// console.log(surname)
+
+
+// function sum (a, b) {
+    
+//     let res = a + b
+    
+//     return res
+    
+// }
+
+// sum(34, 6)
+
+
+// const sum = function(c, d) {
+//     let res = c + d
+    
+//     return res
+// }
+
+// console.log(sum())
+// console.log(sum(34,19))
+
+
+
+/*
+const greeter = function (name) {
+    if(!name.startsWith("F")) {
+        // return ("Hi, " + name + "! " + name + " does not start with F")
+        return `Hi, ${name}! ${name} does not start with F`
+    }
+    else {
+        // return ("Good Morning, " + name)
+        return (`Good morning, ${name}`)
+    }
+    
+}
+*/
+
+
+// console.log(greeter("NuruDeen"))
+// console.log("--------------")
+// console.log(greeter("Feyi"))
+
+
+let firstname = "ola"
+let lastname = "ayinde"
+let age = 34
+
+// My name is Ola Ayinde and my age is 34.
+
+// My firstname is Ola, my surname is Ayinde and my age is 34.
+
+// 5. Write a JavaScript function that capitalizes the first letter of each word of a given string.
+// Ex: "the quick brown fox"
+/*
+step1: Get the string to work on
+2. iterate thorugh the string
+3. identify the begining of every new word in the string
+4. capitalize the first letter of every new word
+
+*/
+
+
+
+// let str = "the quick brown fox"
+
+const capitalizer = function(str) {
+    //logic
+    let numOfSpace = 0
+    for (let i = 0; i < str.length; i++) {
+        if (str.charAt(i) === " ") {
+            numOfSpace++
+        }
+        
+    }
+    // console.log(counter)
+    let strWithEndSpace = str + " "
+    let newStr = ""
+    for (let i = 0; i <= numOfSpace; i++) {
+      newStr = newStr +  strWithEndSpace[0].toUpperCase() + strWithEndSpace.slice(1, strWithEndSpace.indexOf(" ")) + " "
+    //   console.log(newStr)
+      strWithEndSpace = strWithEndSpace.slice(strWithEndSpace.indexOf(" ")+1)
+      //console.log(str)
+    //   console.log(newStr)  
+    }
+        return newStr
+    }
+
+
+console.log(capitalizer("alameen just got back from ibadan with no bread, no wara, in fact he came with complaint."))
+
