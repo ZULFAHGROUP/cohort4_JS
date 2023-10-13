@@ -108,3 +108,95 @@ const capitalizer = function(str) {
 
 console.log(capitalizer("alameen just got back from ibadan with no bread, no wara, in fact he came with complaint."))
 
+// Given two strings s and t, return true if t is an anagram of s, 
+//and false otherwise.
+
+//An Anagram is a word or phrase formed by rearranging the letters 
+//of a different word or phrase, typically using all the original 
+//letters exactly once.
+
+ 
+
+// // Example 1:
+
+// Input: s = "anagram", t = "nagaram"
+// Output: true
+// Example 2:
+
+// Input: s = "rat", t = "car"
+// Output: false
+
+
+
+const isAnagram = function(s, t) {
+    if(s.length !== t.length) {
+        return false
+    }
+
+    for (let i =0; i < s.length; i++) {
+        for (let j = 0; j < t.length; j++) {
+            if(s[i] === t[j]) {
+                // s2 = t.slice(j, j+1)
+                t= t.replace(t[j], "") 
+                break;
+            }
+        }
+    }
+    // console.log(t)
+    if (t.length === 0) {
+        return true
+    }else {
+        return false
+    }
+    
+    }
+
+console.log(isAnagram("silent", "listen"))
+
+/*
+
+Given a string s containing just the characters '(', ')', '{', '}', '[' and ']', 
+determine if the input string is valid.
+
+An input string is valid if:
+
+Open brackets must be closed by the same type of brackets.
+Open brackets must be closed in the correct order.
+Every close bracket has a corresponding open bracket of the same type.
+ 
+
+Example 1:
+
+Input: s = "()"
+Output: true
+Example 2:
+
+Input: s = "()[]{}"
+Output: true
+Example 3:
+
+Input: s = "(]"
+Output: false
+
+
+s= "{}{()}{}(){}"
+*/
+
+const isValid = function (s) {
+    let pair = 0
+    if (s.length % 2 !== 0) {
+        return false
+        }
+    else {
+        for (let i = 0; i < s.length; i+=2) {
+            if ((s[i] == "[" && s[i+1] == "]") || (s[i] == "(" && s[i+1] == ")") || (s[i] == "{" && s[i+1] == "}")) {
+             pair++ 
+            // return true
+            }
+        }
+        if (pair === s.length/2) return true
+        else return false
+    }
+}
+
+console.log(isValid("{}{()}{}(){}"))
