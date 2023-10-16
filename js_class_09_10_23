@@ -106,7 +106,7 @@ const capitalizer = function(str) {
     }
 
 
-console.log(capitalizer("alameen just got back from ibadan with no bread, no wara, in fact he came with complaint."))
+// console.log(capitalizer("alameen just got back from ibadan with no bread, no wara, in fact he came with complaint."))
 
 // Given two strings s and t, return true if t is an anagram of s, 
 //and false otherwise.
@@ -151,7 +151,7 @@ const isAnagram = function(s, t) {
     
     }
 
-console.log(isAnagram("silent", "listen"))
+// console.log(isAnagram("silent", "listen"))
 
 /*
 
@@ -199,4 +199,4 @@ const isValid = function (s) {
     }
 }
 
-console.log(isValid("{}{()}{}(){}"))
+// console.log(isValid("{}{()}{}(){}"))
