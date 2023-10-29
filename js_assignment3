@@ -1,0 +1,283 @@
+// const rem = (nums)=> {
+//     for(let i =0; i < nums.length; i++) {
+//         for(j=i+1; j<nums.length; j++) {
+//             if(nums[i] == nums[j]) {
+//                 nums.splice(j, 1, '_')
+//             }
+//         }
+//     }
+//     nums.sort()
+//     let count = 0
+//     nums.forEach(item=> {
+//         if(item!=='_') {
+//             count++
+//         }
+//     })
+//     return `${count}, nums = [${nums}]`
+//     }
+    
+// console.log(rem([0,0,1,1,1,2,2,3,3,1]))    
+    
+// [0,0,1,1,1,2,2,3,3,4]
+
+// 
+
+
+
+
+
+
+// const removedElem = function (nums,val){
+//     for (let i = 0; i <= nums.length-1; i++){
+//         if(nums[i]===val){
+//             nums.splice(i, 1)
+//              nums.push("_")
+//              i--
+//         }
+        
+//     }
+
+//     // if(nums.includes(val)) {
+//     //     removedElem(nums, val)  //RECURSION
+//     // }
+
+//     return nums
+//  }
+
+// // console.log(removedEle([3,2,2,3],3))
+// console.log(removedElem([0,1,2,2,2,2,2,2,2,3,3,0,4],2))
+
+//1.
+// let removingDuplicates = nums => {
+//     // let result =[]
+//     let count = 0
+//     for(let i = 0; i < nums.length; i++){
+//       if (nums[i] !== nums[i+1]){
+//           nums[count] = nums[i]
+//         //   result[count] = nums[i]
+//           count++
+//       }
+//     } 
+//     return count
+//     // return result
+//     }
+
+// // console.log(removingDuplicates([1,1,2]))
+// console.log(removingDuplicates([0,0,2,2,2,2,3,3,4,4,5]))
+
+
+//FRANK'S
+// const removeDoubleInstances = function (arr) {
+//     for (let i = 0; i < arr.length; i++) {
+//         for (let j = i + 1; j < arr.length; j++) {
+//             if (arr[i] === arr[j]) {
+//                 arr.splice(j, 1); // remove the duplicated number at index j
+//                 j--; //  decrement j to stay at the same index in the next iteration.
+//             }
+//         }
+//     }
+//     return arr; // then return the modified array with duplicates removed.
+// }
+
+// removeDoubleInstances ([2,3,4,5,5,7,7,7,7,3,2,7,7,7,7,1,1,3,5,4,4])
+
+
+
+//DEOLA'S
+// const duplicatedNums = (nums)=> {
+//     nums = nums.map((item , i)=> {
+//         if (nums[i] === nums[i+1]) {
+//             return item = "_"
+//         }else return item
+//     })
+//     nums = nums.filter(item=> item !== "_")
+//     let k = nums.length
+//     return k
+// }
+
+// console.log(duplicatedNums([0,0,0,1,2,3,3,3,4,6,6,7,9,10,10]))
+
+
+//BASHIR
+// function removeDuplicates(nums) {
+//     let newArray = []
+//     // let count = 0
+//     for (let i = 0; i < nums.length; i++) {
+//         for (let j = i + 1; j < nums.length+1; j++) {
+//             if (nums[i] === nums[j]) {
+//                 nums[j] = '_';
+//                 newArray.push(nums[i])
+//             }
+//             else {
+//               newArray.sort()
+//             }
+//         }
+
+//     }
+//     return newArray.length
+// }
+
+// const arr = [0,0,1,2,2,3,3,4,4];
+// console.log (removeDuplicates(arr))
+
+//SEMIU'S
+// const removeDuplicate = nums => {
+//     for (let i = 0; i < nums.length; i++) {
+//         if(nums[i] === nums[i + 1] || nums[i] !== nums[i + 1]) {
+//             //  nums.splice(nums[i + 1], 1)
+//             nums.splice(nums[i], 1)
+//         }
+//     }
+//     return nums
+// }
+// console.log(removeDuplicate([0,1,1,1,2,2,3,3,4]))
+
+// const removeDuplicates = function(nums){
+//     let sortedNums = nums.sort()
+//     let filteredNums = sortedNums.filter(function(item,index){
+//         if(sortedNums.indexOf(item)==index){
+//             return item
+//         }
+//     })
+//     return filteredNums
+//     // return filteredNums.length
+//     }
+//     console.log(removeDuplicates([1,2,2,3,4,4,5,5]))
+
+//ALFAK
+// const eliminateDuplicate = arr0=> {
+//      arr0.filter((word, i, arr) => {
+//         if (arr[i] === arr[i+1] && arr[i+2] != arr[i+1]){ 
+//          return arr.splice(i, 2, word)
+         
+//         }
+//         if (arr[i] !== arr[i+1]){ 
+//          return arr.splice(i, 1, word)
+     
+//         }
+//      })
+//      let output = arr0.length
+//      return output
+// }
+
+// console.log(eliminateDuplicate([0,1,1,1,1,2,2,3,3,6,4,4,4,4,4,4,4,5]))
+
+//BODE
+// const remDup = function (nums) {
+//     let count = 0;
+//     for (let i = 0; i < nums.length; i++) {
+//         if (nums[i] == nums[i + 1]) {
+//           continue;
+//     }
+//     // nums[count] = nums[i];
+//     count++;
+//     }
+    
+//     return count;
+    
+//     }
+
+// console.log(remDup([2, 2, 2]));
+// console.log(remDup([0,1,2, 2, 3, 3, 4, 4, 4]));
+
+const rem = (nums)=> {
+    for(let i =0; i < nums.length; i++) {
+        for(j=i+1; j<nums.length; j++) {
+            if(nums[i] == nums[j]) {
+                nums.splice(j, 1, '_')
+            }
+        }
+    }
+    nums.sort()
+    let count = 0
+    nums.forEach(item=> {
+        if(item!=='_') {
+            count++
+        }
+    })
+    return `${count}, nums = [${nums}]`
+        }
+    
+console.log(rem([0,0,1,1,1,2,2,3,3,1]))    
+    
+// [0,0,1,1,1,2,2,3,3,4]
+
+//OBJECTS
+
+
+// let arr = [1,5,8 ,4, 4, [1,2]
+
+// let anotherArr = new Array()
+
+// 0:1
+// 1:5
+// 2:8
+// 3:4
+// 4:4
+
+
+// let pesron = {key1: value1, key2: value2, key3: value3,..., keyN: valueN}  //object literal
+
+// let anotherPerson = new Object()
+
+let student1 = {
+    name: "Frank", 
+    matNo: 209084035, 
+    age: 22,
+    wify: {
+        name: 'patricia',
+        location: 'ibadan',
+        age: 32
+    }
+    }
+
+let student2 = {
+    name: "joe",
+    dob: "23/23/23",
+    gender: 'male',
+    age: 21,
+    likes: ['football', 'pingpong', 'money', 'cars'],
+    friends: [{name: "selim", hobbies: ['playstation', 'tiktok']},
+                                    {name: 'taofiq', hobbies: ['js', 'table-tennis']},{}],
+    laughMode: function () {
+        return(' 😊')
+    }
+}
+
+// console.log(student1.wify.location[0].toUpperCase() + student1.wify.location.slice(1) )
+// console.log(student1.name)
+// console.log(student1['name'])
+// console.log(student1.wify.age)
+//1. table-tennis  2. pingpong    3. selim
+
+
+
+let obj1 = {
+    school: [[1,2,3],[4,6,7, {a:8,b:9,c:10, d: [11,12]}]],
+    clinic: {a:13,b:14,c:15, d: [16,17]}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
