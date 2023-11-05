@@ -1,0 +1,184 @@
+//SWITCH
+// let grade = prompt("Enter your grade").toUpperCase()
+
+// let score = parseInt(prompt("Enter your score"))
+// .toUpperCase()
+
+// if (score >= 70) console.log("grade is A")
+// else if (score < 70 && score >=60) console.log("grade is B")
+// else if (score < 60 && score >=50) console.log("grade is C")
+// else if (score < 50 && score >=40) console.log("grade is D")
+// else if (score < 40) console.log("grade is F")
+// else console.log("No result")
+
+
+// switch(score) {
+//     case 5: 
+//         console.log("You must have scored between 70 and 100")
+//         break
+//     case 2:  
+//         console.log("You must have scored between 60 and 69")
+//         break
+//     case 4:
+//         console.log("You must have scored between 50 and 59")
+//         break
+//     case 1: 
+//         console.log("You must have scored between 40 and 49")
+//         break
+//     case 3: 
+//         console.log("You must have scored below 40")
+//         break
+//     default: console.log("You have no result")
+    
+// }
+
+//IF..ELSE vs TERNARY
+
+
+// let name = "Toriola"
+
+// if(name == "Toriola".toUpperCase()) {
+//     console.log("Yes, we know him")
+// }else {
+//     console.log("Who is he?")
+// }
+
+
+
+// name=='Toriola'? console.log("We know him"): console.log("Who is he?")
+
+
+let obj = {
+    name: "Adeola",
+    surname: "Akande",
+    job: 'developer',
+    city: null,
+    age: 27,
+    hobby: ['volleyball', 'sleeping'],
+    friend: {name: "doe"}
+    }
+
+
+
+// obj.name && obj.city ? console.log(obj.name): console.log("Not found")
+
+
+
+
+// NULLISH COALESCING
+
+// let nullCheck = obj.cat
+let nullCheck = (obj.city ?? 'frank')
+console.log(nullCheck)
+
+// fetch('https://zulfah.com/farouk', {})
+
+
+// response = {
+//     name: "farouK",
+//     age: 34,
+//     couse: 'fuulstak'
+// }
+
+// response.name[0].toUpperCase()
+
+// (response.name[0].TOperCase() ?? 'frank')
+
+
+//SOLVING THE MEDIAN PROBLEM
+//let data = [1,21,12,1,2,12,2,4,5,6,4,5,6]
+
+
+// const median = (arr)=> {
+//     arr.sort((a,b)=> a-b)
+//     if(arr.length % 2 == 0) {
+//       return (arr[arr.length/2] + arr[(arr.length/2) -1]) / 2
+//     }
+//     else {
+//         return arr[(arr.length-1) / 2]
+//     }
+//     }
+
+
+// console.log(median([1,21,12,1,2,12,2,4,5,6,4,5,6,7,4,8,1,1,1,1]))
+
+//SOLVING THE MODE PROBLEM
+//METHOD 1
+// const mode = nums=> {
+//     let counts = []
+//     let countOfHighestOccuringNumber = 0
+//     let highestOccuringNumber = 0
+//     nums.sort((a,b)=> a - b)
+//     nums = nums.map(item=> {
+//         if (counts[item] === undefined) {
+//             return counts[item] = 1
+//         }else return counts[item]++
+//     })
+    
+//     nums.map(item=> {
+//         if(countOfHighestOccuringNumber < counts[item]) {
+//             highestOccuringNumber = item
+//             countOfHighestOccuringNumber = counts[item]
+//         }
+//     })
+//     return highestOccuringNumber
+// }
+// console.log(mode([1,1,1,2,2,2,2,3,3,3,3,3,33,4]))
+
+
+// METHOD 2
+// const mode = (nums) => {
+//     let element
+//     let init = 0
+//     for (let i = 0; i < nums.length; i++) { 
+//         let count = 0 
+//         for (let j = 0; j < nums.length; j++) { 
+//             if (nums[i] == nums[j]) 
+//                 count++ 
+//         } 
+  
+//         if (init < count) { 
+//             init = count 
+//             element = nums[i]
+//         } 
+//     } 
+  
+//     return element
+// }
+// console.log(mode([2,13,4,5,27,5,5,5,2,1,1,1,1,1,45,234]))
+
+
+//METHOD 3
+let array = [1,1,1,1,1,1,2,2,2,3,3,4,5,5,5,5]
+
+const mode = (arr)=> {
+    let counter1 = 1 // this counts the occurences of the each number
+    let counter2 = 0  //this tracks the total no of elements counted so far
+    let obj = {} //this is to hold {element:no of occurence} as key: value pair
+    arr.sort((a,b)=> a-b)
+    
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === arr[i+1]) {   // compares the current element with the next element
+            counter1++     // if the current element is the same as the next element counter is incremented
+        }
+        else{     //otherwise the cuurent elem is nt same as the next element, meaning the count of the current element is complete...
+            obj[arr[i]] = counter1   // then we make the {element:no of occurence}
+            counter2 = counter2 + counter1  // the update total no of elements counted so far...
+            i = counter2 -1   // then set index to the last element counted completed
+            counter1 = 1   // reset counter1 to count the next unique element
+        }
+        // at the end of the loop, the obj is holding all the elements and their counts as key:value pairs...
+    }
+let maxValue = Math.max(...Object.values(obj))  //this picks the highest value (count) in the obj 
+for(let prop in obj) {
+   if(obj[prop] === maxValue) {  // then iterate through the obj and determine the number (key) that has the highest value
+       return prop    //return that number that has the highest value
+   } 
+}
+    }
+
+console.log(mode(array))
+
+
+
+// Math.max(...[1,2,3,1,22,3,555,3])
