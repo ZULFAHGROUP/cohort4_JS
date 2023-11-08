@@ -1,0 +1,36 @@
+body {
+    background-color: #c8a2c8;
+    display: flex;
+    flex-direction: column;
+}
+
+h1 {
+    margin: 0 auto;
+    color:bisque
+}
+
+.parent {
+    margin: 0 auto;
+    border: 2px solid white;
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+}
+
+.h3-class {
+    color : white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.5rem;
+}
+
+.btn-class {
+    background-color: #c8a2c8;
+    color: bisque;
+    font-size: 1rem;
+    border: none;
+}
+
+h1 span{
+    color: skyblue;
+    width: 50px
+}

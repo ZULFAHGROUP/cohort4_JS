@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body>
+        <div class="parent">
+            <p>Input a decimal number:</p>
+            <input id="inputno" type="text">
+            <h3 id="output">i'm here</h3>
+            <button id="btn">Click me!</button>
+        </div>
+        <script>
+            let input = document.getElementById('inputno');
+            
+            let btn = document.getElementById('btn');
+            console.log(btn.textContent);
+           
+            input.addEventListener('change', function(e){
+                // console.log(input);
+                document.getElementById('output').innerText = Number(input.value) + 10
+           })
+
+           btn.addEventListener('click', function(e){
+                // console.log(input);
+                document.getElementById('output').innerText = Number(input.value) - 10
+           })
+        </script>
+    </body>
+</html>
