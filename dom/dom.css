@@ -30,7 +30,18 @@ h1 {
     border: none;
 }
 
-h1 span{
+.h1span{
     color: skyblue;
     width: 50px
+}
+
+.h3-styles {
+    background-color: yellow;
+    text-transform: uppercase;
+    color: green;
+    border: 1px solid black
+}
+
+p[id='p3'] {
+    color: blue
 }
